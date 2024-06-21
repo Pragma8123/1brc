@@ -24,7 +24,9 @@ var globalStations = make(map[string]*Station)
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 
-	file, err := os.Open("measurements.txt")
+	fileName := os.Args[1]
+
+	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
